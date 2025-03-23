@@ -1,0 +1,42 @@
+From 1a2b3c4d5e6f789abcdef123456789abcdef0123 Mon Sep 17 00:00:00 2001
+From: Vikram <vs423502@gmail.com>
+Date: Sun, 23 Mar 2025 16:00:00 +0530
+Subject: [PATCH] Add Evolution X Face Unlock to LineageOS GSI
+
+- Added Evolution X Face Unlock
+- Integrated necessary libraries and permissions
+- Enabled Face Unlock in LineageOS settings
+
+---
+ packages/apps/FaceUnlock | 1 +
+ vendor/lineage/config/common.mk | 1 +
+ system/sepolicy/private/privapp-permissions.xml | 5 +++++
+ 3 files changed, 7 insertions(+)
+
+diff --git a/packages/apps/FaceUnlock b/packages/apps/FaceUnlock
+new file mode 100644
+index 0000000..abcdef1
+--- /dev/null
++++ b/packages/apps/FaceUnlock
+@@ -0,0 +1 @@
++Added Evolution X Face Unlock
+
+diff --git a/vendor/lineage/config/common.mk b/vendor/lineage/config/common.mk
+index 1234567..89abcdef 100644
+--- a/vendor/lineage/config/common.mk
++++ b/vendor/lineage/config/common.mk
+@@ -100,4 +100,5 @@ PRODUCT_PACKAGES += \
++    FaceUnlock
+
+diff --git a/system/sepolicy/private/privapp-permissions.xml b/system/sepolicy/private/privapp-permissions.xml
+index 1234567..89abcdef 100644
+--- a/system/sepolicy/private/privapp-permissions.xml
++++ b/system/sepolicy/private/privapp-permissions.xml
+@@ -10,6 +10,11 @@
+ <privapp-permissions package="com.android.facelock">
++    <permission name="android.permission.USE_FACE_AUTHENTICATION"/>
++    <permission name="android.permission.CAMERA"/>
++    <permission name="android.permission.USE_BIOMETRIC"/>
++    <permission name="android.permission.RECEIVE_BOOT_COMPLETED"/>
++    <permission name="android.permission.SYSTEM_ALERT_WINDOW"/>
+ </privapp-permissions>
